@@ -34,23 +34,23 @@ public class LAB_2_REYES {
         println("-" + "-".repeat(80));
         
         printCaseAnalysis("10", 
-            "Best case - small input", 
+            "Best case", 
             "O(1) base cases dominate");
         
         printCaseAnalysis("20", 
-            "Average case - moderate input", 
+            "Average case", 
             "Recursive shows exponential growth");
         
         printCaseAnalysis("30", 
-            "Above average - noticeable delay", 
+            "Above average", 
             "Recursive: O(2^n), Iterative: O(n)");
         
         printCaseAnalysis("35", 
-            "Worst case approaching - slow", 
+            "Worst case approaching", 
             "Recursive takes seconds");
         
         printCaseAnalysis("40", 
-            "Worst case - very large input", 
+            "Worst case", 
             "Recursive >> Iterative performance");
         
         println("=" + "=".repeat(80));
