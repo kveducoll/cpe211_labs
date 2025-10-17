@@ -26,6 +26,50 @@ public class LAB_2_REYES {
         
         println("=" + "=".repeat(80));
         newl();
+        
+        // Table 2.2: Case Type Analysis
+        println(flavor("Algorithm Complexity Analysis (Table 2.2)", Color.cyan, Style.italic));
+        println("=" + "=".repeat(100));
+        printf("%-15s | %-40s | %-40s%n", "Case Type", "Description", "Example Operation");
+        println("-" + "-".repeat(100));
+        
+        printCaseAnalysis("Best Case", 
+            "n = 0 or n = 1 (base cases)", 
+            "O(1) for both - Direct return");
+        
+        printCaseAnalysis("Worst Case", 
+            "Large n (e.g., n = 40)", 
+            "Recursive: O(2^n), Iterative: O(n)");
+        
+        printCaseAnalysis("Average Case", 
+            "Moderate n (e.g., n = 20-30)", 
+            "Recursive: O(1.618^n), Iterative: O(n)");
+        
+        printCaseAnalysis("Memory", 
+            "Stack space for recursion vs constant space", 
+            "Recursive: O(n) stack, Iterative: O(1)");
+        
+        printCaseAnalysis("Practical Use", 
+            "Iterative preferred for large inputs", 
+            "Recursive elegant but exponential growth");
+        
+        println("=" + "=".repeat(100));
+        newl();
+        
+        // Analysis Summary
+        println(flavor("Performance Analysis Summary:", Color.yellow, Style.bold));
+        println("• " + flavor("Recursive Fibonacci:", Color.red, Style.bold) + " Exponential time O(2^n), elegant but inefficient");
+        println("• " + flavor("Iterative Fibonacci:", Color.green, Style.bold) + " Linear time O(n), efficient and scalable");
+        println("• " + flavor("Memory:", Color.purple, Style.bold) + " Recursive uses O(n) call stack, Iterative uses O(1) space");
+        println("• " + flavor("Recommendation:", Color.cyan, Style.bold) + " Use iterative for n > 30 to avoid exponential overhead");
+        newl();
+    }
+    
+    private static void printCaseAnalysis(String caseType, String description, String example) {
+        printf("%-15s | %-40s | %-40s%n", 
+            flavor(caseType, Color.yellow, Style.bold), 
+            description, 
+            example);
     }
     
     private static void testFibonacci(int n) {
